@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "01",
+        "category":"Canon",
+        "image":"https://i.ibb.co/fqrDC04/Canon.jpg",
+        "sub_category":[
+
+        ]
+    },
+    {
+        "_id": "02",
+        "category":"Nikon",
+        "image":"https://i.ibb.co/JrccB7d/Nikon.jpg",
+        "sub_category":[
+            
+        ]
+    },
+    {
+        "_id": "03",
+        "category":"Sony",
+        "image":"https://i.ibb.co/XzQx7d9/sony.jpg",
+        "sub_category":[
+            
+        ]
+    }
+]
