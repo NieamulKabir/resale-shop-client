@@ -1,13 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import Lottie from 'lottie-react'
 import logIn from '../../assets/login.json'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 const Login = () => {
-
-    const { signIn } = useContext(AuthContext);
+    const [error, setError] = useState('')
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider()
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -26,6 +29,24 @@ const Login = () => {
             .catch(err => console.error(err));
 
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                if (user) {
+                    toast.success("Successfully Login With Google");
+                }
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                setError(error.message)
+                console.log(error);
+            });
+    }
+
 
     return (
         <div>
@@ -53,13 +74,13 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="password" placeholder="password" name="password" className="input input-bordered" />
-                                    {/* <label className="label">
-                                    <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
-                                </label> */}
+
 
                                 </div>
                                 <div className="text-red-500 py-1">
-                                    {/* {error} */}
+                                    {
+                                        error && <p className='text-red-600'> {error}</p>
+                                    }
                                 </div>
                                 <label className="label">
                                     <h1>Need Account? <span className='text-violet-500 font-semibold'> <Link to='/signup'>Click to Register</Link> </span></h1>
@@ -69,9 +90,10 @@ const Login = () => {
                                 </div>
                             </form>
                             <div className="divider mx-6 mt-0">OR</div>
-                            {/* <OtherAccount></OtherAccount> */}
+
 
                             <button
+                                onClick={handleGoogleSignIn}
                                 className="btn w-[80%] mx-auto mb-10"><FaGoogle className='mr-2 text-2xl' >
                                 </FaGoogle>Google Signin
                             </button>

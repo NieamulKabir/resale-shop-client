@@ -17,7 +17,9 @@ const Header = () => {
 
     const handleSignOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                toast.success("Successfully Sign Out");
+            })
             .catch(error => console.error(error))
     }
     return (
@@ -44,15 +46,7 @@ const Header = () => {
                                     <button className="py-3">HOME</button>
                                 </NavLink>
                             </h1>
-                            <h1 className="btn font-bold hover:bg-rose-100   btn-ghost text-gray-800 rounded-btn mr-2">
-                                <NavLink to="/courses"
-                                    style={({ isActive }) =>
-                                        isActive ? activeStyle : undefined
-                                    }
-                                >
-                                    <button className="py-3">COURSES</button>
-                                </NavLink>
-                            </h1>
+
                             <h1 className="btn font-bold hover:bg-rose-100   btn-ghost text-gray-800 rounded-btn mr-2">
                                 <NavLink to="/blog"
                                     style={({ isActive }) =>
@@ -74,7 +68,32 @@ const Header = () => {
                                 </NavLink>
                             </h1>
 
+                            <h1 className="btn font-bold hover:bg-rose-100   btn-ghost text-gray-800 rounded-btn mr-2">
+                                <NavLink to="/dashboard"
+                                    style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    }
+                                >
+                                    <button className="py-3">DASHBOARD</button>
+                                </NavLink>
+                            </h1>
+
+
                             <h1>
+                                {
+                                    user?.displayName &&
+                                    <div className='flex justify-center items-center'>
+                                        <h3 className="text-lg font-semibold pr-2 ml-0 text-violet-700">Hi,{user?.displayName}  </h3>
+                                        {
+                                            user?.photoURL ?
+                                                <img className="rounded-3xl w-10 tooltip" src={user?.photoURL} alt="" />
+                                                :
+                                                <FaUser></FaUser>
+                                        }
+                                    </div>
+                                }
+                            </h1>
+                            {/* <h1>
                                 {
                                     user?.displayName &&
 
@@ -82,17 +101,12 @@ const Header = () => {
                                     <div className='flex justify-center items-center'>
 
                                         <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
-                                            {
-                                                user?.photoURL ?
-                                                    <img className="rounded-3xl w-10 tooltip" src={user?.photoURL} alt="" />
-                                                    :
-                                                    <FaUser></FaUser>
-                                            }
+
                                         </div>
                                     </div>
 
                                 }
-                            </h1>
+                            </h1> */}
 
                             <h1>
                                 {
@@ -100,13 +114,13 @@ const Header = () => {
                                         <button
                                             onClick={async () => {
                                                 await handleSignOut();
-                                                toast.success("Successfully Sign Out");
                                             }
 
                                             }>
 
                                             <div className='ml-5'>
                                                 <Link to='/login' className="bg-violet-600 w-36 px-4 py-[12px] font-semibold text-white rounded-xl"><span className='text-lg'>SIGN OUT</span></Link>
+
                                             </div>
                                         </button>
 
@@ -157,7 +171,7 @@ const Header = () => {
                             </li>
 
 
-                            {/* <li className='py-2'>
+                            <li className='py-2'>
                                 {
                                     user?.displayName &&
                                     <div className='flex justify-center items-center'>
@@ -166,9 +180,9 @@ const Header = () => {
                                     </div>
 
                                 }
-                            </li> */}
+                            </li>
 
-                            {/* <li>
+                            <li>
                                 {
                                     user ?
                                         <button
@@ -193,12 +207,17 @@ const Header = () => {
                                         </div>
                                 }
 
-                            </li> */}
+                            </li>
 
                         </ul>
                     </div>
+                    <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
                 </div>
+                
             </nav>
+
         </div>
     );
 };

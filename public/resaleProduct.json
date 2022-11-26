@@ -1,26 +1,118 @@
 [
     {
-        "_id": "01",
-        "category":"Canon",
-        "image":"https://i.ibb.co/fqrDC04/Canon.jpg",
-        "sub_category":[
-
+        "category": "Canon",
+        "image": "https://i.ibb.co/fqrDC04/Canon.jpg",
+        "sub_category": [
+            {
+                "_id": "001",
+                "name":"Canon Eos 4000D",
+                "img":"https://i.ibb.co/wNdk5tt/4000d.jpg",
+                "location":"Dhaka Mirpur",
+                "resale_price":"15,000",
+                "original_price":"35,500",
+                "year_of_use":"1year",
+                "Post_date": "10/10/2022",
+                "seller_name":"Kabir"
+            },
+            {
+                "_id": "002",
+                "name":"Canon Eos 2000D",
+                "img":"https://i.ibb.co/8cMbrMC/2000d.jpg",
+                "location":"Dhaka",
+                "resale_price":"25,000",
+                "original_price":"40,660",
+                "year_of_use":"9month",
+                "Post_date": "15/11/2022",
+                "seller_name":"Faria"
+            },
+            {
+                "_id": "003",
+                "name":"Canon Eos 250D",
+                "img":"https://i.ibb.co/nghgTMJ/250d.jpg",
+                "location":"Dhaka",
+                "resale_price":"40,000",
+                "original_price":"60,500",
+                "year_of_use":"3month",
+                "Post_date": "20/11/2022",
+                "seller_name":"Kabir"
+            }
         ]
     },
     {
-        "_id": "02",
-        "category":"Nikon",
-        "image":"https://i.ibb.co/JrccB7d/Nikon.jpg",
-        "sub_category":[
-            
+        "category": "Nikon",
+        "image": "https://i.ibb.co/JrccB7d/Nikon.jpg",
+        "sub_category": [
+            {
+                "_id": "001",
+                "name":"Nikon Z50",
+                "img":"https://i.ibb.co/qJpVxPN/z50.jpg",
+                "location":"Gazipur",
+                "resale_price":"60,000",
+                "original_price":"98,000",
+                "year_of_use":"5month",
+                "Post_date": "10/11/2022",
+                "seller_name":"Faria"
+            },
+            {
+                "_id": "002",
+                "name":"NIKON D7500",
+                "img":"https://i.ibb.co/GpNRHBq/750.jpg",
+                "location":"Dhaka",
+                "resale_price":"70,000",
+                "original_price":"1,17,000",
+                "year_of_use":"4month",
+                "Post_date": "22/11/2022",
+                "seller_name":"Kabir"
+            },
+            {
+                "_id": "003",
+                "name":"Nikon D3700 DSLR",
+                "img":"https://i.ibb.co/sbPdZH5/3700d.jpg",
+                "location":"Dhaka",
+                "resale_price":"15,000",
+                "original_price":"35,000",
+                "year_of_use":"1year",
+                "Post_date": "20/10/2022",
+                "seller_name":"Kabir"
+            }
         ]
     },
     {
-        "_id": "03",
-        "category":"Sony",
-        "image":"https://i.ibb.co/XzQx7d9/sony.jpg",
-        "sub_category":[
-            
+        "category": "Sony",
+        "image": "https://i.ibb.co/XzQx7d9/sony.jpg",
+        "sub_category": [
+            {
+                "_id": "001",
+                "name":"Sony Alpha A6400",
+                "img":"https://i.ibb.co/0sbBt5M/1.jpg",
+                "location":"Dhaka",
+                "resale_price":"80,000",
+                "original_price":"1,05,300",
+                "year_of_use":"3month",
+                "Post_date": "11/11/2022",
+                "seller_name":"kabir"
+            },
+            {
+                "_id": "002",
+                "name":"Sony Alpha 7C",
+                "img":"https://i.ibb.co/3rbG0pL/02.jpg",
+                "location":"Dhaka",
+                "resale_price":"1,00,000",
+                "original_price":"1,75,000",
+                "year_of_use":"4month",
+                "Post_date": "20/11/2022",
+                "seller_name":"Kabir"
+            }, {
+                "_id": "003",
+                "name":"Sony Alpha 7S III",
+                "img":"https://i.ibb.co/804ypjY/3.jpg",
+                "location":"Gazipur",
+                "resale_price":"2,30,000",
+                "original_price":"3,40,000",
+                "year_of_use":"2month",
+                "Post_date": "15/11/2022",
+                "seller_name":"Faria"
+            }
         ]
     }
 ]
